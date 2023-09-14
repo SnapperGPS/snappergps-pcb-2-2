@@ -6121,23 +6121,23 @@ Source: &lt;a href="https://compone2988Datasheet(PDF)ntsearchengine.com/Datashee
 <part name="GND25" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="RF front end"/>
-<attribute name="CREVISION" value="2.9"/>
+<attribute name="CREVISION" value="2.2.0"/>
 <attribute name="DESIGNER" value="A. Rogers, J. Beuchert"/>
-<attribute name="REV" value="2.4"/>
+<attribute name="REV" value="2.2.0"/>
 </part>
 <part name="FRAME2" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="Flash, power, LEDs, and LFXTAL"/>
-<attribute name="CREVISION" value="2.9"/>
+<attribute name="CREVISION" value="2.2.0"/>
 <attribute name="DESIGNER" value="A. Rogers, J. Beuchert"/>
 </part>
 <part name="FRAME3" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="USB and power"/>
-<attribute name="CREVISION" value="2.9"/>
+<attribute name="CREVISION" value="2.2.0"/>
 <attribute name="DESIGNER" value="A. Rogers, J. Beuchert"/>
 </part>
 <part name="FRAME4" library="SparkFun-Aesthetics" deviceset="FRAME-A4L" device="">
 <attribute name="CNAME" value="MCU IO connections"/>
-<attribute name="CREVISION" value="2.9"/>
+<attribute name="CREVISION" value="2.2.0"/>
 <attribute name="DESIGNER" value="A. Rogers"/>
 </part>
 <part name="GND18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -6240,9 +6240,6 @@ Source: &lt;a href="https://compone2988Datasheet(PDF)ntsearchengine.com/Datashee
 <sheets>
 <sheet>
 <plain>
-<text x="-251.46" y="231.14" size="1.778" layer="91">Using Al's desgin as inspiration:
-https://github.com/arribada/horizon/blob/master/hardware/horizon_v4_1/</text>
-<text x="-251.46" y="226.06" size="1.778" layer="91">SnapperGPS zebra logo</text>
 </plain>
 <instances>
 <instance part="U1" gate="A" x="109.22" y="154.94" smashed="yes">
@@ -7757,10 +7754,6 @@ https://github.com/arribada/horizon/blob/master/hardware/horizon_v4_1/</text>
 </schematic>
 </drawing>
 <compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)

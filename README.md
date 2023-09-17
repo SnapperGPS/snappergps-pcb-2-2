@@ -18,7 +18,7 @@ It employs the snapshot GNSS technology, which offloads the computational expens
 
 * Employs multiple satellite systems for high reliability (GPS, Galileo, and BeiDou),
 
-* Achieves a median real-world tracking accuracy of about 12 m (before smoothing),
+* Achieves a median real-world tracking accuracy of about 15 m (before smoothing),
 
 * Maintains a real-time clock to accurately timestamp the fixes,
 

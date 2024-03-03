@@ -1,14 +1,14 @@
-# snappergps-pcb-2-2
+# snappergps-pcb-2-2-LiPo
 
 This is an alternative version of the original SnapperGPS receiver.
-Just like [V1.0.0](https://github.com/SnapperGPS/snappergps-pcb), [V2.0.0](https://github.com/SnapperGPS/snappergps-pcb-2), and [V2.1.0](https://github.com/SnapperGPS/snappergps-pcb-2-1), it is a small, low-cost, and low-power GNSS receiver intended for non-real-time wildlife tracking.
+Just like [V1.0.0](https://github.com/SnapperGPS/snappergps-pcb), [V2.0.0](https://github.com/SnapperGPS/snappergps-pcb-2), [V2.1.0](https://github.com/SnapperGPS/snappergps-pcb-2-1), and [V2.1.2](https://github.com/SnapperGPS/snappergps-pcb-2-2) it is a small, low-cost, and low-power GNSS receiver intended for non-real-time wildlife tracking.
 It employs the snapshot GNSS technology, which offloads the computational expensive data processing to the cloud, and:
 
-* Measures 26.3 mm x 32.0 mm,
+* Measures 26.3 mm x 28.5 mm,
 
-* Operates for more than a year on two button batteries,
+* Operates on a lithium-ion polymer battery,
 
-* Weighs 10.1 g,
+* Weighs about 8 g (without the battery),
 
 * Has enough memory to provide about 22,000 position fixes,
 
@@ -26,7 +26,7 @@ It employs the snapshot GNSS technology, which offloads the computational expens
 
 * Is configured via USB in your browser without the need to install a driver or an app.
 
-This repository contains the hardware design files that can be used to replicate a SnapperGPS receiver V2.2.0.
+This repository contains the hardware design files that can be used to replicate a SnapperGPS receiver V2.2.0-LiPo.
 
 If you use SnapperGPS hardware or software for research, please consider citing our publications.
 
@@ -73,15 +73,11 @@ The main changes from V1.0.0 are:
 
 * The antenna is integrated into the PCB. No external active antenna is used anymore.
 
-* The receiver is powered by two LR48 or SR48 batteries rather than a lithium-ion polymer (LiPo) battery. These are easier to obtain, cheaper, and simpler to ship, but also a bit heavier and prevent the use of custom battery sizes.
-
-* The board is a bit smaller with 26.3 mm x 32.0 mm and this now includes the antenna and battery footprints.
+* The board is a bit smaller with 26.3 mm x 28.5 mm and this now includes the antenna.
 
 * The memory is large enough to collect data for 22,000 fixes. Initially, V1.0.0 only supported a smaller memory for 11,000 fixes, although, it can now be upgraded to the larger memory version, too.
 
-* The board (including antenna and batteries) weighs around 10.1 g. Depending on the choice of antenna and battery, this can be heavier or lighter than V1.0.0.
-
-* The energy consumption is a little lower with 1 μA sleeping current @ 3 V rather than 1-2 μA  sleeping current @ 3.7 V. However, you should not feel the difference in practice.
+* The board (including antenna and excluding battery) weighs around 8 g. Depending on the choice of antenna and battery, this can be heavier or lighter than V1.0.0.
 
 The main changes from V2.0.0 are:
 
@@ -89,22 +85,17 @@ The main changes from V2.0.0 are:
 
 * No general-purpose input/output (GPIO) pins are exposed. Therefore, no daughter-board can be connected.
 
-* The board is smaller with 26.3 mm x 32.0 mm.
-
-* The board (including antenna and batteries) weighs 10.1 g. This is a bit lighter than V2.0.0.
+* The board is a bit smaller with 26.3 mm x 28.5 mm.
 
 * The board does not have an option to use a thicker 4 mm antenna, just a thinner 2 mm antenna. This reduces signal quality in contrast to V2.0.0 with the 4 mm antenna.
 
-The main changes from V2.1.0 are:
+* The board operates on a lithium-ion polymer battery rather than on coin cells.
 
-* The board is smaller with 26.3 mm x 32.0 mm.
+The main changes from V2.1.0 and V2.2.0 are:
 
-* The board (including antenna and batteries) weighs 10.1 g. This is can be a bit lighter or a bit heavier than V2.2.0, depending on the batteries used with V2.1.0.
+* The board is a bit smaller with 26.3 mm x 28.5 mm.
 
-To summarise, V2.2.0 is a little smaller than V2.1.0 and should probably be the preferred version for deployments where small size is crucial.
-However, V2.1.0 can be 0.6 g lighter than V2.2.0 if smaller batteries are used, rendering it a competitor if little weight is crucial.
-For deployments with less restrictive weight/size constraints, V2.0.0 with the 4 mm antenna should probably be preferred to improve signal quality.
-In addition, V2.0.0 is required if a daughter-board shall be connected.
+* The board operates on a lithium-ion polymer battery rather than on coin cells.
 
 ## Workflow
 
@@ -120,7 +111,7 @@ In addition, V2.0.0 is required if a daughter-board shall be connected.
 
 You already have a SnapperGPS receiver?
 See [here](GETTING-STARTED.md) how to get started.
-The instructions are for V1.0.0, but V2.2.0 works very similar.
+The instructions are for V1.0.0, but V2.2.0-LiPo works very similar.
 
 You need to build a receiver first? Keep reading.
 
@@ -230,17 +221,17 @@ The table below lists the electronic components that are needed to assemble a si
 |C4, C8, C10, C12, C13, C14, C16, C17, C20, C23| 10|Murata                        |GRM155R60J104KA01D                     |Ceramic capacitor, 100 nF                                    |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM155R60J104KA01D/490-6287-1-ND/3845484 |
 |C3, C5, C6, C7, C9                            |  5|Murata                        |GRM155R60J103KA01D                     |Ceramic capacitor, 10 nF                                     |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM155R60J103KA01D/490-6286-1-ND/3845483 |
 |C21, C22                                      |  2|Murata                        |GRM1555C1H180JA01D                     |Ceramic capacitor, 18 pF                                     |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM1555C1H180JA01D/2854383               |
-|C11, C19                                      |  2|Murata                        |GRM188R60J105KA01D                     |Multi-layer ceramic capacitor, 1 uF, 6.3 V, X5R              |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J105KA01D/490-1550-1-ND/587755  |
-|C18                                           |  1|Murata                        |GRM185R60J475ME15D                     |Multi-layer ceramic capacitor, 4.7 uF, 6.3 V, X5R            |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM185R60J475ME15D/490-3892-1-ND/965934  |
-|C15, C26                                      |  2|Murata                        |GRM188R60J106KE47D                     |Multi-layer ceramic capacitor, 10 uF, 6.3 V, X5R             |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J106KE47D/490-12538-1-ND/5797528|
-|C27                                           |  1|Murata                        |GRM188R60G226MEA0D                     |Multi-layer ceramic capacitor, 22 uF, 6.3 V, X5R             |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60G226MEA0D/2334877               |
+|C11, C19, C124, C125                          |  4|Murata                        |GRM188R60J105KA01D                     |Multi-layer ceramic capacitor, 1 uF, 6.3 V, X5R              |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J105KA01D/490-1550-1-ND/587755  |
+|C18, C101, C102                               |  3|Murata                        |GRM185R60J475ME15D                     |Multi-layer ceramic capacitor, 4.7 uF, 6.3 V, X5R            |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM185R60J475ME15D/490-3892-1-ND/965934  |
+|C15                                           |  1|Murata                        |GRM188R60J106KE47D                     |Multi-layer ceramic capacitor, 10 uF, 6.3 V, X5R             |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/GRM188R60J106KE47D/490-12538-1-ND/5797528|
 |L2                                            |  1|Murata                        |BLM15HB221SH1D                         |Ferrite bead                                                 |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/murata-electronics/BLM15HB221SH1D/6798444                   |
 |R11, R12                                      |  2|Yageo                         |RC0402FR-0715RL                        |Resistor, 15R                                                |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-0715RL/311-15LRCT-ND/2827914                 |
-|R15, R16                                      |  2|Yageo                         |RC0402FR-071KL                         |Resistor, 1K                                                 |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-071KL/726513                                 |
+|R15, R16, R120                                |  3|Yageo                         |RC0402FR-071KL                         |Resistor, 1K                                                 |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-071KL/726513                                 |
 |R10, R13, R17                                 |  3|Yageo                         |RC0402FR-074K7L                        |Resistor, 4K7                                                |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-074K7L/311-4-7KLRCT-ND/2827881               |
 |R7, R8                                        |  2|Yageo                         |RC0402FR-075K1L                        |Resistor, 5K1                                                |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-075K1L/726624                                |
 |R18                                           |  1|Yageo                         |RC0402FR-076K8L                        |Resistor, 6K8                                                |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-076K8L/311-6-80KLRCT-ND/729589               |
 |R14, R19                                      |  2|Yageo                         |RC0402FR-0710KL                        |Resistor, 10K                                                |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-0710KL/726523                                |
+|R125                                          |  1|Yageo                         |RC0402FR-0725K5L                       |Resistor, 25.5K                                              |0402             |SMD          |                                                                               |                                |
 |R1, R2, R3, R4, R5, R6, R9                    |  7|Yageo                         |RC0402FR-07100KL                       |Resistor, 100K                                               |0402             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/yageo/RC0402FR-07100KL/311-100KLRCT-ND/729473               |
 |Q2                                            |  1|Jauch Quartz                  |Q 0,032768-JTX310-12,5-10-T1-HMR-50K-LF|Crystal, 32.768 kHz ±10 ppm, 12.5 pF, 50 kOhm                |2-SMD            |SMD          |Possible substitute: Epsom, X1A0001410004 FC-135R 32.768KHZ 9PF                |https://www.digikey.com/en/products/detail/jauch-quartz/Q-0-032768-JTX310-12-5-10-T1-HMR-50K-LF/8108077|
 |D1                                            |  1|Rohm Semiconductor            |SML-D12M1WT86                          |LED, yellow-green, 572 nm, 2.2 V                             |0603             |SMD          |                                                                               |https://www.digikey.com/en/products/detail/rohm-semiconductor/SML-D12M1WT86/SML-D12M1WT86CT-ND/5843861 |
@@ -254,9 +245,8 @@ The table below lists the electronic components that are needed to assemble a si
 |Q1, Q3, Q4                                    |  3|Rohm Semiconductor            |TT8M1TR                                |Mosfet array N and P-channel, 20 V, 2.5 A, 1 W               |8-SMD            |SMD          |                                                                               |https://www.digikey.com/en/products/detail/rohm-semiconductor/TT8M1TR/5042837                          |
 |J1                                            |  1|JAE Electronics               |DX07S016JA1R1500                       |USB-C receptacle connector, 24 Pins (16+8 dummy), right angle|                 |through-hole |                                                                               |https://www.digikey.com/en/products/detail/jae-electronics/DX07S016JA1R1500/11585731                   |
 |ANT1                                          |  1|Taoglas                       |GP.1575.25.2.A.02                      |GPS/GALILEO patch antenna                                    |25x25            |through-hole |                                                                               |https://www.digikey.com/en/products/detail/taoglas-limited/GP-1575-25-2-A-02/2332643                   |
-|U6                                            |  1|Texas Instruments             |TPS61291DRVT                           |Boost Switching Regulator IC                                 |6-WSON           |SMD          |                                                                               |https://www.digikey.com/en/products/detail/texas-instruments/TPS61291DRVT/5012070                      |
-|U7                                            |  1|Taiyo Yuden                   |MDMK2020T3R3MM                         |Fixed inductor, 3.3 uH, 1.15 A, 178 MOhm                     |2x2              |SMD          |                                                                               |https://www.digikey.com/en/products/detail/taiyo-yuden/MDMK2020T3R3MM/3479456                          |
-|J4, J5                                        |  2|Keystone Electronics          |2988                                   |Battery holder (LR48/SR48)                                   |                 |SMD          |Possible substitute: Keystone Electronics, 2988TR                              |https://www.digikey.com/en/products/detail/keystone-electronics/2988TR/2746489                         |
+|U104                                          |  1|Ablic Inc.                    |S-1318D33-M5T1U4                       |3.3 V 100 mA voltage regulator                               |SOT-23-5         |SMD          |                                                                               |                                                                                                       |
+|U105                                          |  1|Microchip Technology          |	MCP73831T-2ACI/OT                     |Lithium-ion polymer battery charger                          |SOT-23-5         |SMD          |                                                                               |                                                                                                       |
 |                                              |   |                              |                                       |                                                             |                 |             |                                                                               |                                                                                                       |
 
 The BOM differs slightly from the one for initial SnapperGPS test boards, which was cheaper.
@@ -268,19 +258,7 @@ We had to introduce this change because of the on-going global supply chain disr
 ## Acknowledgements
 
 This SnapperGPS receiver version was developed and is maintained by
-[Jonas Beuchert](https://users.ox.ac.uk/~kell5462/) under supervision of
-[Alex Rogers](https://www.cs.ox.ac.uk/people/alex.rogers/)
-in the Department of Computer Science
-of the University of Oxford.
-
-Jonas Beuchert is
-funded by the EPSRC Centre for Doctoral Training in
-Autonomous Intelligent Machines and Systems
-(DFT00350-DF03.01) and develops
-SnapperGPS as part of his doctoral studies.
-The implementation of SnapperGPS 
-was co-funded by EPSRC IAA Technology Funds
-(D4D00010-BL14 and D4D00190-BL03.01).
+[Jonas Beuchert](https://users.ox.ac.uk/~kell5462/).
 
 ##
 

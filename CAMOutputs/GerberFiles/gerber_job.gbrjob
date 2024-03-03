@@ -1,7 +1,7 @@
 {
     "Header": {
         "Comment": "All values are metric (mm)",
-        "CreationDate": "2023-08-20T13:43:53Z",
+        "CreationDate": "2024-03-03T14:01:09Z",
         "GenerationSoftware": {
             "Application": "EAGLE",
             "Vendor": "Autodesk",
@@ -17,8 +17,8 @@
         },
         "Owner": "Jonas Beuchert <beuchert@robots.ox.ac.uk>",
         "Size": {
-            "X": 26.270175,
-            "Y": 32.033728
+            "X": 26.270172,
+            "Y": 28.533728
         }
     }
 }

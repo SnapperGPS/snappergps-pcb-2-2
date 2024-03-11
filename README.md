@@ -1,7 +1,9 @@
 # snappergps-pcb-2-2-LiPo
 
+**Work in progress.**
+
 This is an alternative version of the original SnapperGPS receiver.
-Just like [V1.0.0](https://github.com/SnapperGPS/snappergps-pcb), [V2.0.0](https://github.com/SnapperGPS/snappergps-pcb-2), [V2.1.0](https://github.com/SnapperGPS/snappergps-pcb-2-1), and [V2.1.2](https://github.com/SnapperGPS/snappergps-pcb-2-2) it is a small, low-cost, and low-power GNSS receiver intended for non-real-time wildlife tracking.
+Just like [V1.0.0](https://github.com/SnapperGPS/snappergps-pcb), [V2.0.0](https://github.com/SnapperGPS/snappergps-pcb-2), [V2.1.0](https://github.com/SnapperGPS/snappergps-pcb-2-1), and [V2.2.0](https://github.com/SnapperGPS/snappergps-pcb-2-2) it is a small, low-cost, and low-power GNSS receiver intended for non-real-time wildlife tracking.
 It employs the snapshot GNSS technology, which offloads the computational expensive data processing to the cloud, and:
 
 * Measures 26.3 mm x 28.5 mm,
